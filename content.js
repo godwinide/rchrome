@@ -87,7 +87,9 @@ That's a win 🔥🔥🔥(${numbers[0]}) ✅✅✅✅
     const data = {
         message: msg,
         msgID: `win${title}${numbers[0]}${numbers[1]}${numbers[2]}${numbers[3]}${numbers[4]}${numbers[5]}${numbers[6]}${numbers[7]}`,
-        type: "win"
+        type: "win",
+        tableName: title,
+        resultType: "won"
     };
     const jsonData = JSON.stringify(data);
     const headers = {
@@ -117,7 +119,9 @@ const sendLossAlert = async (numbers, title) => {
     const data = {
         message: msg,
         msgID: `loss${title}${numbers[0]}${numbers[1]}${numbers[2]}${numbers[3]}${numbers[4]}${numbers[5]}${numbers[6]}${numbers[7]}`,
-        type: "loss"
+        type: "loss",
+        tableName: title,
+        resultType: "loss"
     };
     const jsonData = JSON.stringify(data);
     const headers = {
@@ -259,9 +263,18 @@ function checkResult(numbers) {
 
 
 const init = () => {
+    const url = "#game=roulette&category=all_games"
+    const url2 = "#category=roulette&game=roulette"
     setInterval(() => {
-        main()
+        if (window.location.hash != url) {
+            main()
+        } else {
+            console.log("redirecting")
+            window.location.hash = url2;
+            return;
+        }
     }, 1000)
+
 }
 
 setTimeout(() => {

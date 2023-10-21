@@ -11,7 +11,8 @@ document.getElementById("refreshButton").addEventListener("click", () => {
                 },
             });
         });
-        setTimeout(main, 3 * 60 * 1000)
+        console.log("loaded")
+        setTimeout(main, 30000);
     }
     main()
 });
