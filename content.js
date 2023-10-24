@@ -265,8 +265,10 @@ function checkResult(numbers) {
 const init = () => {
     const url = "#game=roulette&category=all_games"
     const url2 = "#category=roulette&game=roulette"
+    const endUrl = "entry";
+
     setInterval(() => {
-        if (window.location.hash != url) {
+        if (window.location.hash != url || !window.location.href.endsWith(endUrl)) {
             main()
         } else {
             console.log("redirecting")
