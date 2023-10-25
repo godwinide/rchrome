@@ -182,7 +182,8 @@ async function main() {
             ];
 
             if (blackList.includes(title)) {
-                window.location.href = "https://a8r.evo-games.com/frontend/evo/r2/#game=roulette&category=roulette"
+                window.location.href = "https://a8r.evo-games.com/frontend/evo/r2/#game=roulette&category=roulette";
+                return;
             }
 
             if (wonResult === 1 && !lastMsg[wonString]) {
