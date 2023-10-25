@@ -175,12 +175,20 @@ async function main() {
             const readyString = `ready${numbers[0]}${numbers[1]}${numbers[2]}${numbers[3]}${numbers[4]}`;
             // const colReadyString = `colReadyString${numbers[0]}${numbers[1]}${numbers[2]}${numbers[3]}${numbers[4]}`;
 
+            const blackList = [
+                "MONOPOLY Live",
+                "Crazy Time",
+                "Craps"
+            ];
+
+            if (blackList.includes(title)) {
+                window.location.href = "https://a8r.evo-games.com/frontend/evo/r2/#game=roulette&category=roulette"
+            }
+
             if (wonResult === 1 && !lastMsg[wonString]) {
-                console.log("won!!!");
                 lastMsg[wonString] = true;
                 sendWinAlert(numbers, title)
             } else if (wonResult == 2 && !lastMsg[lossString]) {
-                console.log("loss!!!");
                 lastMsg[lossString] = true;
                 sendLossAlert(numbers, title)
             }
