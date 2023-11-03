@@ -26,7 +26,8 @@ const sendAlert = async (numbers, title, dozResult) => {
         msgID: `confirmed${title}${numbers[0]}${numbers[1]}${numbers[2]}${numbers[3]}${numbers[4]}${numbers[5]}${numbers[6]}${numbers[7]}`,
         type: "confirmed",
         tableName: title,
-        prompt: [dozResult[0], dozResult[1]]
+        prompt: [dozResult[0], dozResult[1]],
+        numbers: [numbers[0], numbers[1], numbers[2], numbers[3]]
     };
     const jsonData = JSON.stringify(data);
     const headers = {
