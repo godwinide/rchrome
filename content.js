@@ -165,11 +165,11 @@ async function main() {
 
         if (numbers?.length > 0) {
 
-            const dozResult = getRouletteDozenPosition(numbers.slice(0, 3));
+            const dozResult = getRouletteDozenPosition(numbers.slice(0, 2));
             // const colResult = getRouletteColumnPosition(numbers.slice(0, 4));
-            const readyResult = getRouletteDozenPosition(numbers.slice(0, 2));
+            const readyResult = getRouletteDozenPosition(numbers.slice(0, 1));
             // const colReadyResult = getRouletteColumnPosition(numbers.slice(0, 3));
-            const wonResult = checkResult(numbers.slice(0, 4));
+            const wonResult = checkResult(numbers.slice(0, 3));
 
             const wonString = `won${numbers[0]}${numbers[1]}${numbers[0]}${numbers[2]}${numbers[3]}${numbers[4]}`;
             const lossString = `loss${numbers[0]}${numbers[1]}${numbers[0]}${numbers[2]}${numbers[3]}${numbers[4]}`;
