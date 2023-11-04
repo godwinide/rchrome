@@ -165,9 +165,9 @@ async function main() {
 
         if (numbers?.length > 0) {
 
-            const dozResult = getRouletteDozenPosition(numbers.slice(0, 4));
+            const dozResult = getRouletteDozenPosition(numbers.slice(0, 3));
             // const colResult = getRouletteColumnPosition(numbers.slice(0, 4));
-            const readyResult = getRouletteDozenPosition(numbers.slice(0, 3));
+            const readyResult = getRouletteDozenPosition(numbers.slice(0, 2));
             // const colReadyResult = getRouletteColumnPosition(numbers.slice(0, 3));
             const wonResult = checkResult(numbers.slice(0, 4));
 
